@@ -52,17 +52,19 @@ function VariantEditor({ v }: { v: Variant }) {
         <span className="text-sm font-semibold">{v.label}</span>
         <Switch label="Доступна для записи" isLabelHidden size="sm" value={active} onChange={setActive} />
       </div>
-      <div className="grid grid-cols-[1fr_1fr_auto] items-end gap-2">
-        <label className="flex flex-col gap-1">
+      <div className="grid grid-cols-2 gap-2">
+        <label className="flex min-w-0 flex-col gap-1">
           <span className="text-xs text-secondary">Цена, ₽{v.price_is_from ? ' (от)' : ''}</span>
-          <input inputMode="numeric" type="number" min={0} value={price} onChange={(e) => setPrice(e.target.value)} className="h-11 rounded-xl border border-hairline bg-elevated-2 px-3 text-base tabular" />
+          <input inputMode="numeric" type="text" pattern="[0-9]*" value={price} onChange={(e) => setPrice(e.target.value.replace(/\D/g, ''))} className="h-11 w-full min-w-0 rounded-xl border border-hairline bg-elevated-2 px-3 text-base tabular" />
         </label>
-        <label className="flex flex-col gap-1">
+        <label className="flex min-w-0 flex-col gap-1">
           <span className="text-xs text-secondary">Минут</span>
-          <input inputMode="numeric" type="number" min={5} step={5} value={dur} onChange={(e) => setDur(e.target.value)} className="h-11 rounded-xl border border-hairline bg-elevated-2 px-3 text-base tabular" />
+          <input inputMode="numeric" type="text" pattern="[0-9]*" value={dur} onChange={(e) => setDur(e.target.value.replace(/\D/g, ''))} className="h-11 w-full min-w-0 rounded-xl border border-hairline bg-elevated-2 px-3 text-base tabular" />
         </label>
-        <Button label="Сохранить" size="md" variant={dirty ? 'primary' : 'secondary'} isDisabled={!dirty || !valid} isLoading={save.isPending} onClick={() => save.mutate()} />
       </div>
+      {dirty && (
+        <Button label="Сохранить" variant="primary" width="100%" isDisabled={!valid} isLoading={save.isPending} onClick={() => save.mutate()} />
+      )}
     </div>
   )
 }
