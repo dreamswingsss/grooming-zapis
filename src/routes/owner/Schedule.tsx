@@ -70,7 +70,7 @@ export default function Schedule() {
       <section className="flex flex-col gap-3" aria-labelledby="h-block">
         <h2 id="h-block" className="flex items-center gap-2 font-semibold"><Ban className="size-4 text-accent" />Закрыть время</h2>
         <p className="text-sm text-secondary">Перерыв, личные дела, мастер задерживается — клиенты не смогут записаться на это время.</p>
-        <div className="flex flex-col gap-3 rounded-[20px] border border-hairline bg-elevated p-4">
+        <div className="flex min-w-0 flex-col gap-3 overflow-hidden rounded-[20px] border border-hairline bg-elevated p-4">
           <Field label="Дата" type="date" value={bDay} min={today} onChange={(e) => setBDay(e.target.value)} />
           <div className="grid grid-cols-2 gap-3">
             <Field label="С" type="time" step={900} value={bFrom} onChange={(e) => setBFrom(e.target.value)} />
@@ -103,7 +103,7 @@ export default function Schedule() {
 
       <section className="flex flex-col gap-3" aria-labelledby="h-days">
         <h2 id="h-days" className="flex items-center gap-2 font-semibold"><CalendarOff className="size-4 text-accent" />Выходные и особые дни</h2>
-        <div className="flex flex-col gap-3 rounded-[20px] border border-hairline bg-elevated p-4">
+        <div className="flex min-w-0 flex-col gap-3 overflow-hidden rounded-[20px] border border-hairline bg-elevated p-4">
           <Field label="Дата" type="date" value={xDay} min={today} onChange={(e) => setXDay(e.target.value)} />
           <div role="radiogroup" aria-label="Режим" className="grid grid-cols-2 gap-2">
             {([['closed', 'Выходной'], ['hours', 'Другие часы']] as const).map(([k, l]) => (
