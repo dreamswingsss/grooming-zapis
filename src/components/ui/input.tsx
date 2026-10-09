@@ -6,14 +6,14 @@ type Common = { label: string; hint?: string; error?: string; optional?: boolean
 
 const control = (error?: string) =>
   cn(
-    'w-full rounded-2xl border border-hairline bg-elevated px-4 text-base text-primary outline-none',
+    'block w-full min-w-0 max-w-full appearance-none rounded-2xl border border-hairline bg-elevated px-4 text-left text-base text-primary outline-none',
     'placeholder:text-secondary/60 focus:border-accent-bg focus:bg-elevated-2 transition-colors',
     error && 'border-error',
   )
 
 function Shell({ id, label, hint, error, optional, required, children }: Common & { id: string; children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex min-w-0 flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-medium text-secondary">
         {label}
         {required && <span aria-hidden className="text-accent"> *</span>}
