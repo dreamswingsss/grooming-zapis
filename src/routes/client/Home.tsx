@@ -172,7 +172,6 @@ export default function Home() {
 
       <footer className="mt-10 flex flex-col items-center gap-2 px-5 text-center text-xs text-secondary/80">
         {cfg.photoCredit && <span>{cfg.photoCredit}</span>}
-        <Link to="owner" className="min-h-11 inline-flex items-center underline-offset-4 hover:underline">Вход для студии</Link>
       </footer>
 
       {/* Плавающая кнопка записи после прокрутки обложки */}
