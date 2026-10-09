@@ -1,0 +1,95 @@
+{
+  "slug": "murr",
+  "name": "Котосалон «Мурр»",
+  "timezone": "Europe/Moscow",
+  "booking": {
+    "slotStepMin": 60,
+    "minLeadMin": 120,
+    "horizonDays": 21,
+    "finishWithinHours": true
+  },
+  "hours": [
+    {
+      "days": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "opens": "11:00",
+      "closes": "20:00"
+    }
+  ],
+  "resources": [
+    {
+      "key": "vera",
+      "name": "Вера",
+      "roleTitle": "Фелинолог-грумер"
+    }
+  ],
+  "services": [
+    {
+      "key": "wash",
+      "category": "cats",
+      "name": "Мытьё и сушка",
+      "photo": "https://images.unsplash.com/photo-1612804145457-d2fb2efc7795",
+      "bufferMin": 30,
+      "variants": [
+        {
+          "key": "short",
+          "label": "Короткая шерсть",
+          "price": 2400,
+          "durationMin": 60
+        },
+        {
+          "key": "long",
+          "label": "Длинная шерсть",
+          "price": 3100,
+          "durationMin": 120
+        }
+      ]
+    },
+    {
+      "key": "lion",
+      "category": "cats",
+      "name": "Стрижка «под льва»",
+      "photo": "https://images.unsplash.com/photo-1531549216498-80e1dc380632",
+      "bufferMin": 30,
+      "variants": [
+        {
+          "key": "any",
+          "label": "Любая кошка",
+          "price": 3500,
+          "durationMin": 120
+        }
+      ]
+    }
+  ],
+  "public": {
+    "tagline": "Только кошки. Тихо, бережно, по записи.",
+    "accent": "#A99BF0",
+    "logoText": "МУРР",
+    "heroImage": "https://images.unsplash.com/photo-1511275539165-cc46b1ee89bf",
+    "heroAlt": "Кошка умывается",
+    "city": "Москва",
+    "address": "ул. Тестовая, 2",
+    "addressNote": "Второй демо-тенант для проверки изоляции",
+    "phone": "+7 (900) 111-11-11",
+    "categories": [
+      {
+        "key": "cats",
+        "label": "Кошки"
+      }
+    ],
+    "highlights": [],
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1496284427489-f59461d8a8e6",
+        "alt": "Рыжая кошка на руках"
+      }
+    ],
+    "faq": [],
+    "photoCredit": "Фото: Unsplash"
+  }
+}

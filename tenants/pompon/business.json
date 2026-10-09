@@ -1,0 +1,386 @@
+{
+  "slug": "pompon",
+  "name": "Груминг-студия «Помпон»",
+  "timezone": "Asia/Yekaterinburg",
+  "booking": {
+    "slotStepMin": 30,
+    "minLeadMin": 90,
+    "horizonDays": 30,
+    "finishWithinHours": true
+  },
+  "hours": [
+    {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "opens": "10:00",
+      "closes": "21:00"
+    },
+    {
+      "days": [
+        6,
+        7
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+    }
+  ],
+  "resources": [
+    {
+      "key": "alina",
+      "name": "Алина",
+      "roleTitle": "Старший грумер",
+      "bio": "Породные стрижки шпицев, пуделей и йорков. Спокойно работает с тревожными собаками."
+    },
+    {
+      "key": "polina",
+      "name": "Полина",
+      "roleTitle": "Грумер",
+      "bio": "Гигиена, SPA и экспресс-линька. Любит крупных и лохматых."
+    },
+    {
+      "key": "ksenia",
+      "name": "Ксения",
+      "roleTitle": "Мастер по кошкам",
+      "bio": "Кошки любого характера, бережно и без лишнего стресса."
+    }
+  ],
+  "services": [
+    {
+      "key": "complex",
+      "category": "dogs",
+      "name": "Комплексный груминг",
+      "description": "Мытьё профкосметикой, сушка, стрижка по породе или на ваш вкус, когти, уши, глаза.",
+      "photo": "https://images.unsplash.com/photo-1719464454959-9cf304ef4774",
+      "bufferMin": 15,
+      "resources": [
+        "alina",
+        "polina"
+      ],
+      "variants": [
+        {
+          "key": "mini",
+          "label": "Мини",
+          "hint": "до 5 кг · той, йорк, шпиц",
+          "price": 2800,
+          "durationMin": 120
+        },
+        {
+          "key": "medium",
+          "label": "Средняя",
+          "hint": "5–15 кг · пудель, бишон",
+          "price": 3800,
+          "durationMin": 150
+        },
+        {
+          "key": "large",
+          "label": "Крупная",
+          "hint": "15–30 кг · спаниель, корги",
+          "price": 5200,
+          "durationMin": 180
+        },
+        {
+          "key": "giant",
+          "label": "Гигант",
+          "hint": "от 30 кг · самоед, ретривер",
+          "price": 6500,
+          "priceIsFrom": true,
+          "durationMin": 240
+        }
+      ]
+    },
+    {
+      "key": "hygiene",
+      "category": "dogs",
+      "name": "Гигиенический груминг",
+      "description": "Лапы, мордочка, гигиеническая зона, когти и уши. Между полными стрижками.",
+      "photo": "https://images.unsplash.com/photo-1733210872526-863e2f16cf39",
+      "bufferMin": 10,
+      "resources": [
+        "alina",
+        "polina"
+      ],
+      "variants": [
+        {
+          "key": "mini",
+          "label": "Мини",
+          "hint": "до 5 кг",
+          "price": 1600,
+          "durationMin": 60
+        },
+        {
+          "key": "medium",
+          "label": "Средняя",
+          "hint": "5–15 кг",
+          "price": 2100,
+          "durationMin": 75
+        },
+        {
+          "key": "large",
+          "label": "Крупная",
+          "hint": "от 15 кг",
+          "price": 2800,
+          "durationMin": 90
+        }
+      ]
+    },
+    {
+      "key": "spa",
+      "category": "dogs",
+      "name": "SPA-мытьё и экспресс-линька",
+      "description": "Глубокое мытьё, маска, вычёсывание подшёрстка — дома шерсти станет заметно меньше.",
+      "photo": "https://images.unsplash.com/photo-1727510190155-51abda425a82",
+      "bufferMin": 15,
+      "resources": [
+        "polina"
+      ],
+      "variants": [
+        {
+          "key": "mini",
+          "label": "Мини",
+          "hint": "до 5 кг",
+          "price": 1500,
+          "durationMin": 60
+        },
+        {
+          "key": "medium",
+          "label": "Средняя",
+          "hint": "5–15 кг",
+          "price": 2200,
+          "durationMin": 90
+        },
+        {
+          "key": "large",
+          "label": "Крупная",
+          "hint": "от 15 кг",
+          "price": 3200,
+          "durationMin": 120
+        }
+      ]
+    },
+    {
+      "key": "trimming",
+      "category": "dogs",
+      "name": "Тримминг",
+      "description": "Для жесткошёрстных: терьеры, шнауцеры, таксы. Выщипывание отмершей шерсти вручную.",
+      "photo": "https://images.unsplash.com/photo-1528846104175-4fd300ee59da",
+      "bufferMin": 15,
+      "resources": [
+        "alina"
+      ],
+      "variants": [
+        {
+          "key": "mini",
+          "label": "Мини",
+          "hint": "до 8 кг",
+          "price": 3200,
+          "priceIsFrom": true,
+          "durationMin": 150
+        },
+        {
+          "key": "medium",
+          "label": "Средняя",
+          "hint": "8–20 кг",
+          "price": 4200,
+          "priceIsFrom": true,
+          "durationMin": 180
+        }
+      ]
+    },
+    {
+      "key": "cat-complex",
+      "category": "cats",
+      "name": "Комплекс для кошек",
+      "description": "Мытьё, сушка, вычёсывание, когти, уши. Без седации, в тихом кабинете.",
+      "photo": "https://images.unsplash.com/photo-1625279138876-8910c2af9a30",
+      "bufferMin": 15,
+      "resources": [
+        "ksenia",
+        "polina"
+      ],
+      "variants": [
+        {
+          "key": "short",
+          "label": "Короткая шерсть",
+          "hint": "британцы, шотландцы",
+          "price": 2900,
+          "durationMin": 90
+        },
+        {
+          "key": "long",
+          "label": "Длинная шерсть",
+          "hint": "мейн-кун, перс",
+          "price": 3600,
+          "durationMin": 120
+        }
+      ]
+    },
+    {
+      "key": "cat-lion",
+      "category": "cats",
+      "name": "Стрижка кошки «под льва»",
+      "description": "Убирает колтуны и спасает от жары. Голова, лапы и хвост — пушистые.",
+      "photo": "https://images.unsplash.com/photo-1578652782379-e71e1d1489e7",
+      "bufferMin": 15,
+      "resources": [
+        "ksenia"
+      ],
+      "variants": [
+        {
+          "key": "any",
+          "label": "Любая кошка",
+          "price": 3200,
+          "durationMin": 90
+        }
+      ]
+    },
+    {
+      "key": "claws",
+      "category": "extra",
+      "name": "Стрижка когтей",
+      "description": "Аккуратно, без поранений, с подпиливанием.",
+      "photo": "https://images.unsplash.com/photo-1611173622933-91942d394b04",
+      "bufferMin": 5,
+      "variants": [
+        {
+          "key": "any",
+          "label": "Собака или кошка",
+          "price": 500,
+          "durationMin": 20
+        }
+      ]
+    },
+    {
+      "key": "ears",
+      "category": "extra",
+      "name": "Чистка ушей и глаз",
+      "photo": "https://images.unsplash.com/photo-1597603413826-cd1c06b05222",
+      "bufferMin": 5,
+      "variants": [
+        {
+          "key": "any",
+          "label": "Собака или кошка",
+          "price": 400,
+          "durationMin": 15
+        }
+      ]
+    },
+    {
+      "key": "teeth",
+      "category": "extra",
+      "name": "Ультразвуковая чистка зубов",
+      "description": "Без наркоза, для спокойных питомцев. Убирает налёт и мягкий камень.",
+      "photo": "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01",
+      "bufferMin": 10,
+      "resources": [
+        "alina",
+        "ksenia"
+      ],
+      "variants": [
+        {
+          "key": "any",
+          "label": "Собака или кошка",
+          "price": 2500,
+          "durationMin": 45
+        }
+      ]
+    }
+  ],
+  "public": {
+    "tagline": "Стрижём, моем и бережём нервы — ваши и питомца. Запишитесь за минуту.",
+    "description": "Небольшая студия для собак и кошек. Один питомец на одного мастера, без клеток и спешки. Профкосметика под тип шерсти, сушим тёплым компрессором.",
+    "accent": "#EDA56B",
+    "logoText": "ПОМПОН",
+    "heroImage": "https://images.unsplash.com/photo-1727681200723-9513e4e3c394",
+    "heroAlt": "Грумер расчёсывает собаку после сушки",
+    "city": "Екатеринбург",
+    "address": "ул. Примерная, 1",
+    "addressNote": "Демо-адрес: здесь будет адрес студии",
+    "phone": "+7 (900) 000-00-00",
+    "whatsapp": "79000000000",
+    "telegram": "@example",
+    "categories": [
+      {
+        "key": "dogs",
+        "label": "Собаки"
+      },
+      {
+        "key": "cats",
+        "label": "Кошки"
+      },
+      {
+        "key": "extra",
+        "label": "Доп. услуги"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Один на один",
+        "text": "Мастер занят только вашим питомцем, без конвейера."
+      },
+      {
+        "title": "Без седации",
+        "text": "Работаем спокойно и делаем паузы, если питомец устал."
+      },
+      {
+        "title": "Профкосметика",
+        "text": "Подбираем шампунь и кондиционер под тип шерсти."
+      },
+      {
+        "title": "Фото после",
+        "text": "Пришлём фото результата, пока вы едете забирать."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "https://images.unsplash.com/photo-1611173622933-91942d394b04",
+        "alt": "Шпиц в полотенце после мытья",
+        "caption": "После SPA"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1625277743460-43716b93507a",
+        "alt": "Чёрный пудель на прогулке"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1534361960057-19889db9621e",
+        "alt": "Ши-тцу бежит по траве"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1678153184494-1f6fc14a673d",
+        "alt": "Собака в зелёной бандане",
+        "caption": "Гигиена"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1583511655826-05700d52f4d9",
+        "alt": "Собака в пижаме на жёлтом фоне"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1597595735781-6a57fb8e3e3d",
+        "alt": "Довольный пёс после груминга"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Нужно ли кормить перед визитом?",
+        "a": "Лучше покормить за 3–4 часа и выгулять перед приходом — так питомцу будет спокойнее."
+      },
+      {
+        "q": "Можно остаться рядом?",
+        "a": "Можно, если питомцу так спокойнее. Иногда без хозяина собаки ведут себя ровнее — подскажем по ситуации."
+      },
+      {
+        "q": "Что если опаздываю?",
+        "a": "Напишите нам. Если следующий клиент позже, просто начнём чуть позже."
+      },
+      {
+        "q": "Как отменить запись?",
+        "a": "В разделе «Мои записи» не позднее чем за 2 часа. Позже — позвоните."
+      }
+    ],
+    "photoCredit": "Фото: Unsplash"
+  }
+}

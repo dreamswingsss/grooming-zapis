@@ -1,0 +1,4 @@
+# Cloudflare Pages: оболочка студии для глубоких ссылок (статические файлы отдаются раньше правил).
+/s/:slug/owner/*  /s/:slug/owner/index.html  200
+/s/:slug/owner    /s/:slug/owner/index.html  200
+/s/:slug/*        /s/:slug/index.html        200
