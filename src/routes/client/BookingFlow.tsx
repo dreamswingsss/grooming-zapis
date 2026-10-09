@@ -81,12 +81,11 @@ function Flow({ initialService, initialVariant, onClose }: { initialService?: st
     const s: Step[] = []
     if (!initialService) s.push('service')
     if (variants.length !== 1) s.push('variant')
-    if (eligible.length > 1) s.push('master')
     s.push('time', 'contacts', 'done')
     return s
   }, [initialService, variants.length, eligible.length])
 
-  const firstStep: Step = !service ? 'service' : !variant ? (variants.length === 1 ? 'master' : 'variant') : eligible.length > 1 ? 'master' : 'time'
+  const firstStep: Step = !service ? 'service' : !variant ? (variants.length === 1 ? 'time' : 'variant') : 'time'
   const [step, setStep] = useState<Step>(steps.includes(firstStep) ? firstStep : steps[0])
   const [dir, setDir] = useState<1 | -1>(1)
 
@@ -194,8 +193,7 @@ function Flow({ initialService, initialVariant, onClose }: { initialService?: st
           {step === 'service' && (
             <ServiceList services={active} slug={slug} selected={serviceId} onPick={(s) => { setServiceId(s.id); setVariantId(undefined); setSlot(null); setDay(null); setResourceId(null); setTimeout(() => {
               const vs = s.variants.filter((v) => v.is_active)
-              const el = s.resourceIds.length ? s.resourceIds.length : resources.filter((r) => r.is_active).length
-              go(vs.length !== 1 ? 'variant' : el > 1 ? 'master' : 'time')
+              go(vs.length !== 1 ? 'variant' : 'time')
             }, 0) }} />
           )}
 
@@ -253,7 +251,7 @@ function Flow({ initialService, initialVariant, onClose }: { initialService?: st
 
           {step === 'contacts' && variant && slot && service && (
             <form id="bk-form" noValidate className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); validateAndSubmit() }}>
-              <Summary service={service} variant={variant} startsAt={slot.starts_at} tz={tz} masterName={master?.name ?? 'Любой мастер'} />
+              <Summary service={service} variant={variant} startsAt={slot.starts_at} tz={tz} masterName={master?.name ?? ''} />
               <Field id="bk-name" label="Ваше имя" required autoComplete="given-name" name="name" value={name} onChange={(e) => { setName(e.target.value); setErrors((x) => ({ ...x, name: undefined })) }} error={errors.name} />
               <Field id="bk-phone" label="Телефон" required type="tel" inputMode="tel" autoComplete="tel" placeholder="+7 (___) ___-__-__" value={phone} onChange={(e) => { setPhone(formatPhone(e.target.value)); setErrors((x) => ({ ...x, phone: undefined })) }} error={errors.phone} hint="Позвоним, только если что-то изменится" />
               <div className="grid grid-cols-2 gap-3">
@@ -354,7 +352,7 @@ function Summary({ service, variant, startsAt, tz, masterName }: { service: Serv
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-col">
           <span className="font-semibold">{service.name}</span>
-          <span className="text-[13px] text-secondary">{variant.label} · {masterName}</span>
+          <span className="text-[13px] text-secondary">{[variant.label, masterName].filter(Boolean).join(' · ')}</span>
         </div>
         <span className="font-bold tabular">{priceLabel(variant.price, variant.price_is_from)}</span>
       </div>
